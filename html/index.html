@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroX — Interplanetary Space Tourism</title>
+    
+    <!-- 1. Bootstrap 5.3 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- 2. Custom CSS (Connected AFTER Bootstrap to override default styles) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+
+    <!-- NAVBAR (Bootstrap Component) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-info fs-3" href="#">🚀 AstroX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fs-5">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#custom-tours">Custom Tours (Task 1)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fleet">Fleet (Task 2)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Bootstrap Grid + Accordion) -->
+    <header id="hero" class="py-5 bg-gradient">
+        <div class="container py-4">
+            <div class="row align-items-center gy-4">
+                <div class="col-12 col-lg-6">
+                    <!-- 1. ФОТО DYRA.JPG В HERO-СЕКЦИИ -->
+                    <img src="img/dyra.jpg" alt="Spaceflight" class="img-fluid rounded mb-4 shadow border border-secondary">
+                    
+                    <h1 class="display-3 fw-bold text-white mb-3">Explore the Solar System</h1>
+                    <p class="lead text-light mb-4">Book your commercial spaceflight to the Moon, Mars, or orbital stations. Experience zero gravity with class-leading luxury.</p>
+                    <button class="btn btn-info btn-lg fw-bold me-2" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Flight</button>
+                    <a href="#custom-tours" class="btn btn-outline-light btn-lg">View Destinations</a>
+                </div>
+                <!-- Interactive Accordion Component -->
+                <div class="col-12 col-lg-6">
+                    <div class="accordion accordion-flush rounded overflow-hidden" id="spaceFAQ">
+                        <div class="accordion-item bg-secondary text-white">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-info" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    👨‍🚀 Is health preparation required?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#spaceFAQ">
+                                <div class="accordion-body">Yes, all civilian astronauts undergo a 3-day basic orientation program before launch.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-secondary text-white">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-info" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    🚀 How long does a lunar trip take?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#spaceFAQ">
+                                <div class="accordion-body">Standard orbital flight to the Moon station takes approximately 3 days.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE-ONLY ANNOUNCEMENT BANNER (Hidden on Tablet and Desktop: Task 2 Requirement) -->
+    <div class="container my-3 d-block d-md-none">
+        <div class="alert alert-info text-center fw-bold mb-0">
+            📲 Mobile Special Offer: Get 10% off Moon flights via App!
+        </div>
+    </div>
+
+    <!-- TASK 1: HANDMADE MEDIA QUERIES SECTION (NO BOOTSTRAP CLASSES INSIDE GRID) -->
+    <section id="custom-tours" class="custom-tours-section py-5">
+        <div class="custom-container">
+            <h2 class="custom-title">Featured Destinations (Handmade Responsive Grid)</h2>
+            <p class="custom-subtitle">This section is made with pure CSS and mobile-first @media queries without Bootstrap grid.</p>
+            
+            <div class="custom-tour-grid">
+                <div class="custom-card">
+                    <!-- 2. ФОТО MARS.JPG В TASK 1 -->
+                    <img src="img/mars.jpg" alt="Lunar Orbit Resort" class="custom-card-img">
+                    <div class="custom-card-badge">Popular</div>
+                    <h3>Lunar Orbit Resort</h3>
+                    <p>Spend 5 days orbiting the Moon with panoramic views of Earth. Includes space walks and zero-G dining.</p>
+                    <span class="custom-price">$150,000</span>
+                </div>
+                <div class="custom-card">
+                    <div class="custom-card-badge">Hardcore</div>
+                    <h3>Mars Colony Outpost</h3>
+                    <p>A full 30-day expedition to Olympus Mons Base. Walk on the red surface and join active research missions.</p>
+                    <span class="custom-price">$850,000</span>
+                </div>
+                <div class="custom-card">
+                    <div class="custom-card-badge">Luxury</div>
+                    <h3>Orbital Hotel Alpha</h3>
+                    <p>Low Earth orbit station featuring luxury suites, artificial gravity lounges, and 16 sunrises a day.</p>
+                    <span class="custom-price">$95,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TASK 2: BOOTSTRAP CARDS SECTION -->
+    <section id="fleet" class="py-5 bg-black">
+        <div class="container">
+            <h2 class="text-center text-info mb-4">Our Spacecraft Fleet (Bootstrap Grid)</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card bg-dark text-light border-secondary h-100 overflow-hidden">
+                        <!-- 3. ФОТО COS.JPG В TASK 2 -->
+                        <img src="img/cos.jpg" class="card-img-top" alt="Astro Shuttle I" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info">Astro Shuttle I</h5>
+                            <p class="card-text">Designed for short low-Earth orbit luxury tours. Holds up to 8 passengers.</p>
+                            <a href="#" class="btn btn-outline-info mt-auto">Technical Specs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card bg-dark text-light border-secondary h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info">StarCruiser Mars</h5>
+                            <p class="card-text">Heavy interplanetary transport with radiation shielding and artificial gravity.</p>
+                            <a href="#" class="btn btn-outline-info mt-auto">Technical Specs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card bg-dark text-light border-secondary h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info">Lunar Lander X</h5>
+                            <p class="card-text">Specialized surface landing module for Moon excursions and research trips.</p>
+                            <a href="#" class="btn btn-outline-info mt-auto">Technical Specs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-secondary py-4 border-top border-secondary text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 AstroX Space Tourism. Created for Web Tech Assignment #3.</p>
+        </div>
+    </footer>
+
+    <!-- BOOTSTRAP MODAL COMPONENT -->
+    <div class="modal fade" id="bookingModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title fw-bold">Book Space Ticket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-content p-3">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Select Destination</label>
+                            <select class="form-select">
+                                <option>Lunar Orbit Resort</option>
+                                <option>Mars Colony Outpost</option>
+                                <option>Orbital Hotel Alpha</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-info w-100 fw-bold">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Bootstrap 5.3 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

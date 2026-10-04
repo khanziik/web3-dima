@@ -1,0 +1,144 @@
+/* =========================================================
+   TASK 1: CUSTOM MEDIA QUERIES (MOBILE-FIRST APPROACH)
+   No Bootstrap grid/classes used in this section.
+   ========================================================= */
+
+/* Base Styles: Mobile Phones (< 768px) */
+.custom-tours-section {
+    background-color: #0b0f19;
+    padding: 30px 15px;
+}
+
+.custom-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.custom-title {
+    color: #0dcaf0;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.custom-subtitle {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Flex layout defaulting to 1 item per row on phones */
+.custom-tour-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.custom-card {
+    background-color: #161e2e;
+    border: 1px solid #2d3748;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card-badge {
+    display: inline-block;
+    background-color: #0dcaf0;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.custom-card h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.custom-card p {
+    color: #cbd5e0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.custom-price {
+    display: block;
+    color: #0dcaf0;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------------
+   Breakpoint 1: Tablets (min-width: 768px)
+   Changes layout to 2 columns
+   --------------------------------------------------------- */
+@media (min-width: 768px) {
+    .custom-container {
+        max-width: 720px;
+    }
+
+    .custom-tour-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Each item takes ~50% width minus gap */
+    .custom-card {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .custom-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* ---------------------------------------------------------
+   Breakpoint 2: Laptops/Desktops (min-width: 1200px)
+   Changes layout to 3 columns + increases spacing & headings
+   --------------------------------------------------------- */
+@media (min-width: 1200px) {
+    .custom-container {
+        max-width: 1140px;
+    }
+
+    .custom-tour-grid {
+        gap: 30px;
+    }
+
+    /* Each item takes ~33.3% width minus gap */
+    .custom-card {
+        flex: 1 1 calc(33.333% - 20px);
+        padding: 30px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .custom-card:hover {
+        transform: translateY(-5px);
+        border-color: #0dcaf0;
+    }
+
+    .custom-title {
+        font-size: 2.6rem;
+        text-align: left;
+    }
+
+    .custom-subtitle {
+        text-align: left;
+        font-size: 1.1rem;
+    }
+
+    .custom-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    }
+}
